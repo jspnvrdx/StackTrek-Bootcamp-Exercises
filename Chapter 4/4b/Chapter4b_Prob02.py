@@ -18,3 +18,5 @@ if ("u" in sentence) or ("U" in sentence):
 
 if count == 1:
     print("There is only one different vowel in the string.")
+else:
+    print(f"There are {count} different vowels in the string.")
