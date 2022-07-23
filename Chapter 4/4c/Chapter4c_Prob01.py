@@ -22,4 +22,3 @@ if (b**2) - (4 * a * c) > 0:
 if (b**2) - (4 * a * c) == 0:
     solution1 = (-b + sqrt(squareroot)) / (2 * a)
     print(f"There is one solution , namely {solution1}")
-# there should be an error here
