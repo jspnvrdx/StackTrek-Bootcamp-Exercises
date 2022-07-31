@@ -1,7 +1,5 @@
-from math import fabs
 import os
 import random
-import string
 from ascii_art_hangman import eight_stages, six_stages, four_stages
 from words import words
 os.system('cls||clear')
@@ -14,8 +12,7 @@ while play:
     number_of_stages = []
     maxLives = 0
     while maxLives == 0:
-        difficulty = input("Enter difficulty (EASY = 1, NORMAL = 2, HARD = 3): ")
-        maxLives = 0
+        difficulty = input('Enter difficulty (EASY = 1, NORMAL = 2, HARD = 3): ')
 
         if difficulty == '1':
             maxLives = 8
@@ -39,16 +36,16 @@ while play:
     used_letters = set()
     message = ''
     flag = True
-    # 
+    # Start of hangman game
     while flag:
         os.system('cls||clear')
 
         if difficulty == 1:
-            print("Dificulty: EASY")
+            print('Dificulty: EASY')
         elif difficulty == 2:
-            print("Dificulty: NORMAL")
+            print('Dificulty: NORMAL')
         elif difficulty == 3:
-            print("Dificulty: HARD")
+            print('Dificulty: HARD')
         
         # print ascii art for stages
         print(number_of_stages[maxLives])
@@ -62,15 +59,15 @@ while play:
         else:
             flag = False
             os.system('cls||clear')
-            print("SORRY YOU RAN OUT OF LIVES, MAYBE NEXT TIME.")
-            print(f"THE WORD WAS \"{word}\"")
+            print('SORRY YOU RAN OUT OF LIVES, MAYBE NEXT TIME.')
+            print(f'THE WORD WAS \'{word}\'')
             continue
             
         if word == ''.join(word_list):
             flag = False
             os.system('cls||clear')
-            print("CONGRATULATIONS! YOU GUESSED THE WORD!")
-            print(f"THE WORD WAS \"{word}\"")
+            print('CONGRATULATIONS! YOU GUESSED THE WORD!')
+            print(f'THE WORD WAS \'{word}\'')
             continue
             
         print('Used Letters:',' '.join(used_letters),'\n')
@@ -94,13 +91,15 @@ while play:
             message = 'Please enter valid input (One letter only)'
         
         # --------------------------------------
-    playAgainPrompt = input("Play again? (Y/N) : ").upper()
-    if playAgainPrompt == 'Y':
-        continue 
-    elif playAgainPrompt == 'N':
-        play = False
-        break  
-    else:
-        os.system('cls||clear')
-        print("Please enter valid input (Y/N)")
-        continue
+    playAgainPrompt = ''
+    while playAgainPrompt != 'Y' and playAgainPrompt != 'N':
+        playAgainPrompt = input('Play again? (Y/N) : ').upper()
+        if playAgainPrompt == 'Y':
+            continue 
+        elif playAgainPrompt == 'N':
+            play = False
+            break  
+        else:
+            os.system('cls||clear')
+            print('Please enter valid input (Y/N)')
+            continue
