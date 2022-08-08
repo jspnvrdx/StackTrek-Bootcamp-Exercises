@@ -21,7 +21,7 @@ def jToI():
         else:
             new_filecontent += i
 
-    return new_filecontent
+    print(new_filecontent) 
     
 
-print(jToI())
+jToI()
