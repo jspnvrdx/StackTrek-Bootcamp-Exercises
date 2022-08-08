@@ -15,6 +15,7 @@ def occurence_of_the():
             word = word.upper()
             if word == "THE":
                 count += 1
-    return count
+    print(count)
+    f.close()
 
-print(occurence_of_the())
+occurence_of_the()
