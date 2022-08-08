@@ -22,6 +22,7 @@ def jToI():
             new_filecontent += i
 
     print(new_filecontent) 
+    f.close()
     
 
 jToI()
