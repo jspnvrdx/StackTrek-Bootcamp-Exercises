@@ -24,4 +24,4 @@ def jToI():
     return new_filecontent
     
 
-jToI()
+print(jToI())
