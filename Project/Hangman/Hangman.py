@@ -32,7 +32,7 @@ while play:
     while '-' in word or ' ' in word:
         word = random.choice(words).upper()
 
-    word_letter = set(word)
+    # word_letter = set(word)
     used_letters = set()
     message = ''
     flag = True
