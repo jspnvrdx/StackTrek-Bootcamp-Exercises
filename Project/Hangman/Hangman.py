@@ -2,6 +2,7 @@ import os
 import random
 from ascii_art_hangman import eight_stages, six_stages, four_stages
 from words import words
+from threading import Timer
 os.system('cls||clear')
 
 #----CODE STARTS HERE------
@@ -72,7 +73,7 @@ while play:
             
         print('Used Letters:',' '.join(used_letters),'\n')
         print(message)
-        print(word)
+        # print(word)
         print('Word:',' '.join(word_list))
         
         guess = input('Guess a letter: ').upper()

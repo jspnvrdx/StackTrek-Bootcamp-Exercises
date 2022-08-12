@@ -121,5 +121,4 @@ def game_timer():
     pass
 
 stages, maxLives, difficulty, message, word = [], 0, '', '', ''
-
 start_game()
