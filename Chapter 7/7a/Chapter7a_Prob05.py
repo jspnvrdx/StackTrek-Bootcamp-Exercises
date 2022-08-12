@@ -1,6 +1,6 @@
 import os
 import pickle
-os.system('cls||clear')
+
 
 #----CODE STARTS HERE------
 
@@ -115,6 +115,7 @@ def search_record():
     book.close()
 
 def start():
+    os.system('cls')
     pick = choice()
     if pick == '1':
         add_record()
