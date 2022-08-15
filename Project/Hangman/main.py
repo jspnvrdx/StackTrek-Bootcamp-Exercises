@@ -63,6 +63,7 @@ def hangman(maxLives, stages, word, difficulty, message, used_letters):
         print('SORRY YOU RAN OUT OF LIVES, MAYBE NEXT TIME.')
         print(f'THE WORD WAS \'{word}\'')
         used_letters = list()
+        timer.cancel()
         return
 
     if word == ''.join(word_list):
@@ -70,9 +71,12 @@ def hangman(maxLives, stages, word, difficulty, message, used_letters):
         print('CONGRATULATIONS! YOU GUESSED THE WORD!')
         print(f'THE WORD WAS \'{word}\'')
         used_letters = list()
+        timer.cancel()
         return
     
-    print(word)
+    # display word for debugging purposes
+    # print(word)
+
     print('Used Letters:',' '.join(used_letters))
     print(message)
     print('Word:',' '.join(word_list))
