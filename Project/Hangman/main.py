@@ -2,7 +2,7 @@ import os
 import random
 from words import words
 from ascii_art_hangman import eight_stages, six_stages, four_stages
-from threading import Thread as th
+from threading import Timer
 os.system('cls||clear')
 
 #----CODE STARTS HERE------
@@ -39,6 +39,11 @@ def get_word():
 def hangman(maxLives, stages, word, difficulty, message, used_letters):
     os.system('cls||clear')
 
+    if not timer.is_alive():
+        print('TOO BAD, YOU RAN OUT OF TIME')
+        print(f'THE WORD WAS \'{word}\'')
+        return
+
     if difficulty == '1':
         print('Dificulty: EASY')
     elif difficulty == '2':
@@ -58,14 +63,14 @@ def hangman(maxLives, stages, word, difficulty, message, used_letters):
         print('SORRY YOU RAN OUT OF LIVES, MAYBE NEXT TIME.')
         print(f'THE WORD WAS \'{word}\'')
         used_letters = list()
-        return False
+        return
 
     if word == ''.join(word_list):
         os.system('cls||clear')
         print('CONGRATULATIONS! YOU GUESSED THE WORD!')
         print(f'THE WORD WAS \'{word}\'')
         used_letters = list()
-        return False
+        return
     
     print(word)
     print('Used Letters:',' '.join(used_letters))
@@ -91,11 +96,19 @@ def hangman(maxLives, stages, word, difficulty, message, used_letters):
 # -------------------------------------------------------------------------
 def play_again():
     
-    response = input("Do you want to play again? [Y/N]").upper()
-    if response == "Y":
+    response = input('Do you want to play again? [Y/N]: ').upper()
+    if response == 'Y':
         return True
-    else:
+    elif response == 'N':
         return False
+    else:
+        os.system('cls')
+        print('Invalid choice. Please try again')
+        return play_again()
+
+# -------------------------------------------------------------------------
+def timer_print(message):
+    print(message)
 
 # -------------------------------------------------------------------------
 
@@ -107,18 +120,18 @@ def intro(stages, maxLives, difficulty, message, word):
     return (stages, maxLives, difficulty, message, word)
 
 def start_game():
-    global stages, maxLives, difficulty, message, word
+    global stages, maxLives, difficulty, message, word, timer
     stages, maxLives, difficulty, message, word = intro(stages, maxLives, difficulty, message, word)
+    timer.start()
     hangman(maxLives, stages, word, difficulty, message, used_letters=list())
-    play()
-
-def play():
     while play_again():
+        timer = Timer(30,timer_print, args=('TIME\'S UP!',))
         stages, maxLives, difficulty, message, word = intro(stages, maxLives, difficulty, message, word)
+        timer.start()
         hangman(maxLives, stages, word, difficulty, message, used_letters=list())
 
-def game_timer():
-    pass
+timer = Timer(30,timer_print, args=('TIME\'S UP!',))
 
+# Global Variables
 stages, maxLives, difficulty, message, word = [], 0, '', '', ''
 start_game()
