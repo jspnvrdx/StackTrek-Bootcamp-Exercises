@@ -1,3 +1,4 @@
 test.py
 displayBinary.py
 Project/Hangman/__pycache__/words.cpython-310.pyc
+*.pyc
