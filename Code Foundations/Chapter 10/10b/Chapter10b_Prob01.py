@@ -5,17 +5,16 @@ os.system('cls||clear')
 
 import heapq
 
-
 class Airport:
     def __init__(self):
-        self.data = list()
+        self.data = []
         heapq.heapify(self.data)
 
     def add_passenger(self, passenger):
-        heapq.heappush(self.data, (passenger.is_pregnant, passenger.with_children))
+        heapq.heappush(self.data, passenger)
 
     def dequeue(self):
-        return heapq.heappop(self.data)
+      	return heapq.heappop(self.data)
 
 
 class Passenger:
@@ -24,18 +23,20 @@ class Passenger:
         self.age = age
         self.is_pregnant = is_pregnant
         self.with_children = with_children
-        
 
     def sub_group(self):
-        # insert code
-        pass
+        if self.age >= 60:
+            return 1
+        elif self.is_pregnant or self.with_children:
+            return 2
+        return 3
 
     def __repr__(self):
-        # insert code
-        pass
+        return self.name
 
     def __lt__(self, other):
-        return other < 60
+        return self.sub_group() < other.sub_group()
+
 
 airport = Airport()
 passenger1 = Passenger("Henry", 27, False, False)
