@@ -1,0 +1,10 @@
+ul{
+    list-style-position: inside;
+    text-align: center;
+}
+div{
+    background-color: darkcyan;
+    margin: auto 15%;
+    border: 1px solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
