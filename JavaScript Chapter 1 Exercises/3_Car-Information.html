@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        img{
+            width: 700px;
+        }
+        #car-info{
+            width: 700px;
+            border: 1px solid;
+        }
+        li{
+            font-size: 30px;
+            list-style-position: inside;
+        }
+        .main{
+            width: 700px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="https://i.ytimg.com/vi/_38pccKEuNI/maxresdefault.jpg" alt="">
+        <div id="car-info">
+            <ul>
+                <li>Manufacturer: <span id="manufacturer">&lt;Manufacturer&gt;</span></li>
+                <li>Make and Model: <span id="model">&lt;Make and Model&gt;</span></li>
+                <li>Engine: <span id="engine">&lt;Engine&gt;</span></li>
+                <li>Body Type: <span id="bodyType">&lt;Body Type&gt;</span></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let manufacturer = "Mazda";
+        let model = "CX-30";
+        let engine = "SKYACTIV-G 2.0L";
+        let bodyType = "5-door SUV";
+
+        document.getElementById("manufacturer").innerHTML = manufacturer;
+        document.getElementById("model").innerHTML = model;
+        document.getElementById("engine").innerHTML = engine;
+        document.getElementById("bodyType").innerHTML = bodyType;
+    </script>
+</body>
+</html>
