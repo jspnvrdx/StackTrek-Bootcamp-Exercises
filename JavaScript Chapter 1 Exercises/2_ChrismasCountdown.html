@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Countdown</title>
+</head>
+
+<body>
+    <div id="countdown">
+        <img src="https://www.animatedimages.org/data/media/357/animated-christmas-tree-image-0310.gif"
+            alt="animated-christmas-tree-image-0310">
+        <h1>Chrismas <br> in <span id="date">[date]</span> days</h1>
+    </div>
+    <script>
+        let d = new Date();
+        let year = d.getFullYear();
+        let day = 1000 * 60 * 60 * 24;
+        let currentDays = Math.round(d.getTime() / day); // Computing current days from 1970
+        let christmas = new Date(year, 11, 25);
+        let christmasDay = Math.round(christmas.getTime() / day); // Computing the days of this year's christmas from 1970
+        
+        let daysLeft = christmasDay - currentDays;
+        document.getElementById("date").innerHTML = daysLeft;
+        document.getElementById("countdown").style.width = "300px";
+        document.getElementById("countdown").style.margin = "auto";
+        document.getElementById("countdown").style.textAlign = "center";
+    </script>
+</body>
+
+</html>
