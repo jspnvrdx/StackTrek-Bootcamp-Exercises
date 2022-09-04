@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celcius to Farenheight Converter</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .wrapper{
+            text-align: center;
+            width: 30%;
+            margin: auto;
+            background-color: aquamarine;
+        }
+        #celcius{
+            font-size: 20px;
+            height: 30px;
+            text-align: center;
+        }
+        #convert{
+            background-color: aliceblue;
+            border: 1px solid;
+            margin: 5px;
+            padding: 20px;
+            font-size: 20px;
+            
+        }
+        #farenheight{
+            height: 50px;
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <input type="text" placeholder="Enter number in &deg;C" id="celcius" value="0">
+        <br>
+        <button id="convert">Convert</button>
+        <br>
+        <input type="text"  placeholder="Result in &deg;F" id="farenheight" disabled>
+    </div>
+    <script>
+        document.getElementById("convert").addEventListener("click", converts);
+        
+        function converts(){
+            var celcius = document.getElementById("celcius").value;
+            var farenheight = (celcius * (9 / 5)) + 32;
+            document.getElementById("farenheight").value = farenheight;
+        }
+    </script>
+</body>
+</html>
