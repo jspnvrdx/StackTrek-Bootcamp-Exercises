@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Note</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .wrapper{
+            width: 70%;
+            margin: 0 auto 200px;
+        }
+        .textarea{
+            display: flex;
+            /* font-size: 20px; */
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        .stickynote{
+            background-color: aqua;
+            padding: 70px 20px;
+            width: 30%;
+            margin: auto auto 100px;
+            text-align: center;
+        }
+        button{
+            padding: 5%;
+            background-color: aliceblue;
+            border: 1px solid;
+            border-radius: 50%;
+            margin: 0 5%;
+        }
+        #text{
+            font-size: 30px;
+            width: 50%;
+            resize: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="textarea">
+            <textarea name="text" id="text" cols="30" rows="2" placeholder="Insert text here"></textarea>
+            <button id="add" onclick="addStickyNote()">ADD</button>
+        </div>
+        <div class="container">
+            <div id="notes"></div>
+        </div>
+    </div>
+
+    <script>
+        function addStickyNote(){
+            // getting the value of text to put in a sticky note
+            const text = document.getElementById("text").value;
+
+            // Generating random rgb formatted colors
+            var x = Math.floor(Math.random() * 256);
+            var y = Math.floor(Math.random() * 256);
+            var z = Math.floor(Math.random() * 256);
+            var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+            if (text == ""){
+                alert("The note must not be empty");
+            }
+            else{
+                const notes = document.getElementById("notes");
+                const note = document.createElement("p");
+                const node = document.createTextNode(text);
+                note.appendChild(node);
+                const newDiv = document.createElement("div");
+                newDiv.appendChild(note);
+                notes.appendChild(newDiv)
+
+                newDiv.style.width = "350px";
+                newDiv.style.height = "180px";
+                newDiv.style.display = "flex";
+                newDiv.style.justifyContent = "center";
+                newDiv.style.alignItems = "center";
+                newDiv.style.backgroundColor = bgColor;
+                newDiv.style.margin = "auto auto 50px";
+            }
+            
+            
+            
+
+        }
+
+    </script>
+</body>
+</html>
