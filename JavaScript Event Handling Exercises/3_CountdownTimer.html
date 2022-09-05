@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        .timer{
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        #rocket-pic{
+            width: 300px;
+            display: none;
+        }
+        #countdown-number{
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="timer">
+        <h1>COUNTDOWN TIMER</h1>
+        <p id="countdown-number"></p>
+        <img src="https://www.kindpng.com/picc/m/264-2646074_transparent-rocket-ship-clipart-clipart-rocket-launch-cartoon.png" alt="rocket launching" id="rocket-pic">
+    </div>
+    <script>
+        const element = document.getElementById("countdown-number");
+        var count = 10;
+        var x = setInterval(function(){
+            if (count == 0){
+                clearInterval(x);
+                element.style.display = "none";
+                document.getElementById("rocket-pic").style.display = "initial";
+            }
+            element.innerHTML = count;
+            count--;},1000);
+    </script>
+</body>
+</html>
