@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    column-count: 2;
+    margin: auto;
+    border: 1px solid;
+}
+div{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid;
+    width: 60%;
+    margin: auto;
+}
+h2{
+    padding-left: 10px;
+}
