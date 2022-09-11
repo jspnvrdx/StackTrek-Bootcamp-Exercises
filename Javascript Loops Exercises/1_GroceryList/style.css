@@ -2,8 +2,7 @@
     box-sizing: border-box;
 }
 main{
-    column-count: 2;
-    margin: auto;
+    display: flex;
     border: 1px solid;
 }
 div{
