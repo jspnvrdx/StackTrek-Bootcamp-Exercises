@@ -1,3 +1,8 @@
+import os
+os.system('cls||clear')
+
+#----CODE STARTS HERE------
+
 class PickItUp:
     @classmethod
     def sort(cls, array):
@@ -18,3 +23,11 @@ class Item:
 
     def weight(self):
         return self.mass
+
+item1 = Item("apple", 25)
+item2 = Item("orange", 50)
+item3 = Item("banana", 50)
+
+basket = [item1, item2, item3]
+
+print(PickItUp.sort(basket))
