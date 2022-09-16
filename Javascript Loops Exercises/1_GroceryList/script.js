@@ -16,11 +16,12 @@ function getList(list, id) {
         tag.setAttribute("name", id.slice(0,-1));
         tag.setAttribute("id", x.split(" ")[0]);
         const label = document.createElement("label");
-        label.setAttribute("for", x.split(" ")[0])
+        label.setAttribute("for", id.slice(0,-1));
         const text = document.createTextNode(x);
+
         label.appendChild(text);
         tag.appendChild(label);
-        idtag.appendChild(tag)
+        idtag.appendChild(tag);
         
         const br = document.createElement("br");
         idtag.appendChild(br);
