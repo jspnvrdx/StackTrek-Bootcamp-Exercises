@@ -3,14 +3,27 @@
 }
 main{
     display: flex;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 div{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border: 1px solid;
     width: 60%;
     margin: auto;
 }
+
+#meat-container, 
+#soap-and-shampoos-container,
+#vegetables-container, 
+#canned-goods-container{
+    border: 1px solid;
+    margin-bottom: 30px;
+    width: 50%;
+}
+
+#meats, #soaps, #vegetables, #canned-goods{
+    margin: 20px;
+}
+
 h2{
     padding-left: 10px;
 }

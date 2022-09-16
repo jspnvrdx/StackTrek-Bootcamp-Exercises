@@ -11,19 +11,23 @@ const cannedGoodsId = "canned-goods";
 function getList(list, id) {
     const idtag = document.getElementById(id);
     for (let x of list){
-        const tag = document.createElement("input");
-        tag.setAttribute("type", "checkbox");
-        tag.setAttribute("name", id.slice(0,-1));
-        tag.setAttribute("id", x.split(" ")[0]);
-        const label = document.createElement("label");
-        label.setAttribute("for", id.slice(0,-1));
-        const text = document.createTextNode(x);
-
-        label.appendChild(text);
-        tag.appendChild(label);
-        idtag.appendChild(tag);
+        // create a label
+        var label = document.createElement("label");
+        // create a checkbox
+        var checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = id.slice(0,-1);
+        checkbox.id = x.split(" ")[0];
         
-        const br = document.createElement("br");
+        label.setAttribute("for", x.split(" ")[0]);
+        var text = document.createTextNode(x);
+
+        label.appendChild(checkbox);
+        label.appendChild(text);
+        // checkbox.appendChild(label);
+        idtag.appendChild(label);
+        
+        var br = document.createElement("br");
         idtag.appendChild(br);
     }
 }
