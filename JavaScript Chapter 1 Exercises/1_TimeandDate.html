@@ -38,14 +38,22 @@
         let date = d.getUTCDate().toString().padStart(2, "0");
         let day = days[d.getUTCDay()];
         var hour = d.getHours().toString().padStart(2, "0");
-        if (hour % 12 == 0) {
+
+        if (parseInt(hour / 12) == 0) {
+            if (hour == 0){
+                hour = 12;
+            }
             var str = "AM";
         }
         else {
             hour = (hour % 12).toString().padStart(2, "0");
+            if (hour == 0){
+                hour = 12;
+            }
             var str = "PM";
         }
-        let minutes = d.getMinutes();
+        
+        let minutes = d.getMinutes().toString().padStart(2, "0");
         let seconds = d.getUTCSeconds().toString().padStart(2, "0");
         let miliseconds = d.getUTCMilliseconds();
 
